@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Welcome {{ session['user'] }}</h1>
+
+    <h2>{{ role }} Dashboard</h2>
+
+    {% if role == "Admin" %}
+        <p>You can manage users and monitor the system.</p>
+
+    {% elif role == "Manager" %}
+        <p>You can supervise employees and manage reports.</p>
+
+    {% elif role == "Employee" %}
+        <p>You can view and update your assigned tasks.</p>
+
+    {% elif role == "Guest" %}
+        <p>You have limited access to the system.</p>
+
+    {% endif %}
+
+    <a href="/logout" class="logout-btn">
+        <button>
+            Logout
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>

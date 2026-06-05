@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Role Selection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Select Your Role</h1>
+
+    <form method="POST">
+
+        <div class="role-option">
+            <input type="radio" name="role" value="Admin" required>
+            Admin
+        </div>
+
+        <div class="role-option">
+            <input type="radio" name="role" value="Manager">
+            Manager
+        </div>
+
+        <div class="role-option">
+            <input type="radio" name="role" value="Employee">
+            Employee
+        </div>
+
+        <div class="role-option">
+            <input type="radio" name="role" value="Guest">
+            Guest
+        </div>
+
+        <br>
+
+        <button type="submit">
+            Continue
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
